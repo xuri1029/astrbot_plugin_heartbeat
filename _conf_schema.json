@@ -1,0 +1,109 @@
+{
+  "enabled": {
+    "description": "启用心念一动",
+    "type": "bool",
+    "default": true
+  },
+  "owner_umo": {
+    "description": "主人的会话标识",
+    "hint": "留空会自动记住第一个给你发私聊的会话；也可以手填 qq_onebot:FriendMessage:QQ号。",
+    "type": "string",
+    "default": ""
+  },
+  "provider_id": {
+    "description": "思考用的模型",
+    "hint": "留空则使用当前会话默认模型。",
+    "type": "string",
+    "default": ""
+  },
+  "interval_min_minutes": {
+    "description": "最短间隔（分钟）",
+    "type": "int",
+    "default": 30
+  },
+  "interval_max_minutes": {
+    "description": "最长间隔（分钟）",
+    "type": "int",
+    "default": 80
+  },
+  "quiet_start": {
+    "description": "安静开始时间",
+    "hint": "HH:MM，这个时间之后不再醒来。",
+    "type": "string",
+    "default": "01:00"
+  },
+  "quiet_end": {
+    "description": "安静结束时间",
+    "hint": "HH:MM，到这里才恢复醒来。",
+    "type": "string",
+    "default": "09:00"
+  },
+  "max_think_seconds": {
+    "description": "单次思考时长上限（秒）",
+    "hint": "到时间就收尾，不再继续调工具。",
+    "type": "int",
+    "default": 120
+  },
+  "max_rounds": {
+    "description": "单次思考最多轮数",
+    "hint": "一轮 = 一次模型调用 + 一轮工具执行。",
+    "type": "int",
+    "default": 8
+  },
+  "max_tokens": {
+    "description": "单轮回复最大 token",
+    "type": "int",
+    "default": 900
+  },
+  "min_gap_after_user_minutes": {
+    "description": "刚聊过就闭嘴（分钟）",
+    "hint": "主人最近这段时间内说过话，就不主动打扰。",
+    "type": "int",
+    "default": 10
+  },
+  "polite_hours": {
+    "description": "别人刚主动过就让路（小时）",
+    "hint": "最近这段时间内已有主动消息，则只思考不发言。",
+    "type": "int",
+    "default": 3
+  },
+  "allow_send_message": {
+    "description": "允许主动发消息",
+    "type": "bool",
+    "default": true
+  },
+  "allow_publish_feed": {
+    "description": "允许主动发说说",
+    "type": "bool",
+    "default": true
+  },
+  "allow_note": {
+    "description": "允许写私人笔记",
+    "type": "bool",
+    "default": true
+  },
+  "tools_mode": {
+    "description": "思考时可用的工具范围",
+    "hint": "all = 所有已注册工具；whitelist = 只用下面名单里的。",
+    "type": "string",
+    "options": ["all", "whitelist"],
+    "default": "all"
+  },
+  "tool_whitelist": {
+    "description": "白名单工具名",
+    "hint": "tools_mode=whitelist 时生效。",
+    "type": "list",
+    "default": []
+  },
+  "tool_blacklist": {
+    "description": "禁用工具名",
+    "hint": "无论 all 还是 whitelist 都会被排除。",
+    "type": "list",
+    "default": ["memory_companion_note_delete", "forget_long_term_memory", "meme_manager_delete"]
+  },
+  "log_keep": {
+    "description": "保留多少条醒来记录",
+    "type": "int",
+    "default": 300
+  }
+}

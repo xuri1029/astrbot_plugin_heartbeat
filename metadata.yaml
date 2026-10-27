@@ -1,0 +1,6 @@
+name: astrbot_plugin_heartbeat
+display_name: 心念一动
+desc: 每隔一段时间自己醒来，看一眼现状，然后决定要说点什么、发条说说，还是什么都不做。
+version: 0.1.0
+author: 东哥
+repo: https://github.com/xuri1029/astrbot_plugin_heartbeat

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+data/
+*.log
+*.bak
+state.json
+notes.jsonl
+wake_log.jsonl
